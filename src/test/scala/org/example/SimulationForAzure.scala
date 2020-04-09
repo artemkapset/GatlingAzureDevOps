@@ -32,23 +32,23 @@ class SimulationForAzure extends Simulation {
     // Go to main page
     .exec(http("Go to main page")
       .get("/"))
-    .pause(3, 5)
+    .pause(1)
     // Click any comp
     .exec(http("Click any comp")
       .get("/computers/355"))
-    .pause(3, 5)
+    .pause(1)
     // Click cancel
     .exec(http("Click cancel")
       .get("/computers"))
-    .pause(7, 9)
+    .pause(1)
     // Enter name and click filter
     .exec(http("Enter name and click filter")
       .get("/computers?f=Mac"))
-    .pause(8, 10)
+    .pause(1)
     // Click add new
     .exec(http("Click add new")
       .get("/computers/new"))
-    .pause(13, 16)
+    .pause(1)
     // Input data and click create
     .exec(http("Input data and click create")
       .post("/computers")
@@ -57,15 +57,15 @@ class SimulationForAzure extends Simulation {
       .formParam("introduced", "2020-04-04")
       .formParam("discontinued", "2021-04-03")
       .formParam("company", "${randomCompamy}"))
-    .pause(14, 17)
+    .pause(1)
     // Enter name of created comp and click filter
     .exec(http("Enter name of created comp and click filter")
       .get("/computers?f=${randomName}"))
 
   setUp(scn.inject(
-    atOnceUsers(3),
-    nothingFor(2),
-    rampUsers(4) during (3),
-    constantUsersPerSec(1) during (4)
+    atOnceUsers(3)
+//    nothingFor(2),
+//    rampUsers(4) during (3),
+//    constantUsersPerSec(1) during (4)
   )).protocols(httpProtocol)
 }

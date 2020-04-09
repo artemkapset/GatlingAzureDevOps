@@ -42,7 +42,7 @@
         <executions>
           <execution>
             <goals>
-              <goal>verify</goal>
+              <goal>test</goal>
             </goals>
           </execution>
         </executions>
