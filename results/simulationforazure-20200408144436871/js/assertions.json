@@ -1,0 +1,10 @@
+{
+  "simulation": "org.example.SimulationForAzure",
+  "simulationId": "simulationforazure",
+  "start": 1586357076871,
+  "description": "",
+  "scenarios": ["SimulationForAzure"],
+  "assertions": [
+
+  ]
+}
