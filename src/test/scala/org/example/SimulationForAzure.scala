@@ -63,7 +63,7 @@ class SimulationForAzure extends Simulation {
       .get("/computers?f=${randomName}"))
 
   setUp(scn.inject(
-    atOnceUsers(3)
+    atOnceUsers(4)
 //    nothingFor(2),
 //    rampUsers(4) during (3),
 //    constantUsersPerSec(1) during (4)
