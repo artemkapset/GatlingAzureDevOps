@@ -9,7 +9,9 @@ import io.gatling.jdbc.Predef._
 
 import scala.util.Random
 
-class OtherSimulation extends Simulation{
+class OtherSimulation
+//extends Simulation
+{
 
   val httpProtocol = http
     .baseUrl("http://computer-database.gatling.io")
@@ -62,11 +64,11 @@ class OtherSimulation extends Simulation{
     .exec(http("Enter name of created comp and click filter")
       .get("/computers?f=${randomName}"))
 
-  setUp(scn.inject(
-    atOnceUsers(3)
-    //    nothingFor(2),
-    //    rampUsers(4) during (3),
-    //    constantUsersPerSec(1) during (4)
-  )).protocols(httpProtocol)
+//  setUp(scn.inject(
+//    atOnceUsers(3)
+//    //    nothingFor(2),
+//    //    rampUsers(4) during (3),
+//    //    constantUsersPerSec(1) during (4)
+//  )).protocols(httpProtocol)
 
 }
